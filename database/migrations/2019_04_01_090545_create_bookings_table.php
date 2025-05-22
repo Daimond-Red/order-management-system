@@ -56,7 +56,9 @@ class CreateBookingsTable extends Migration
             $table->foreign('cargo_type_id')->references('id')->on('cargo_types')->onDelete('cascade');
             $table->foreign('city_id')->references('id')->on('cities')->onDelete('cascade');
             $table->foreign('drop_location_city_id')->references('id')->on('cities')->onDelete('cascade');
+            $table->auditable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

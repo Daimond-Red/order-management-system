@@ -26,7 +26,9 @@ class CreateDocumentsTable extends Migration
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('driver_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('vehicle_id')->references('id')->on('vehicles')->onDelete('cascade');
+            $table->auditable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

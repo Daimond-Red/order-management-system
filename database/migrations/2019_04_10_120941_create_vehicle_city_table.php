@@ -19,7 +19,9 @@ class CreateVehicleCityTable extends Migration
             $table->unsignedInteger('city_id')->nullable();
             $table->foreign('vehicle_id')->references('id')->on('vehicles')->onDelete('cascade');
             $table->foreign('city_id')->references('id')->on('cities')->onDelete('cascade');
+            $table->auditable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

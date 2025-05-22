@@ -21,7 +21,9 @@ class CreateAssignVehicleDriversTable extends Migration
             $table->foreign('booking_id')->references('id')->on('bookings')->onDelete('cascade');
             $table->foreign('driver_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('vehicle_id')->references('id')->on('vehicles')->onDelete('cascade');
+            $table->auditable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

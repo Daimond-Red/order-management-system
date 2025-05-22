@@ -17,7 +17,9 @@ class CreateAppNotificationsTable extends Migration
             $table->increments('id');
             $table->string('title')->nullable();
             $table->text('message')->nullable();
+            $table->auditable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

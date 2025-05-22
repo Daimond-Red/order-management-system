@@ -19,7 +19,9 @@ class CreateApiLogsTable extends Migration
             $table->text('json')->nullable();
             $table->text('req')->nullable();
             $table->text('res')->nullable();
+            $table->auditable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

@@ -18,7 +18,9 @@ class CraeteAppConfigsTable extends Migration
             $table->string('module')->nullable();
             $table->string('field')->nullable();
             $table->text('value')->nullable();
+            $table->auditable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

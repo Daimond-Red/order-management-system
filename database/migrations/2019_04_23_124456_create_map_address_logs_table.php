@@ -23,7 +23,9 @@ class CreateMapAddressLogsTable extends Migration
 
             $table->foreign('booking_id')->references('id')->on('bookings')->onDelete('cascade');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->auditable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

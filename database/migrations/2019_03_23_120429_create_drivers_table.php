@@ -31,7 +31,9 @@ class CreateDriversTable extends Migration
             $table->foreign('country_id')->references('id')->on('countries')->onDelete('cascade');
             $table->foreign('vendor_id')->references('id')->on('users')->onDelete('cascade');
 
+            $table->auditable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

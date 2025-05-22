@@ -17,7 +17,9 @@ class CreateCitiesTable extends Migration
             $table->increments('id');
             $table->string('title')->nullable();
             $table->integer('state_id')->nullable();
-            // $table->timestamps();
+            $table->auditable();
+            $table->timestamps();
+            $table->softDeletes();
         });
     }
 

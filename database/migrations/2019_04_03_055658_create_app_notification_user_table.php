@@ -19,7 +19,9 @@ class CreateAppNotificationUserTable extends Migration
             $table->unsignedInteger('user_id')->nullable();
             $table->foreign('app_notification_id')->references('id')->on('app_notifications')->onDelete('cascade');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->auditable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

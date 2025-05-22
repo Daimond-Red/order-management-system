@@ -19,7 +19,9 @@ class CreateCargoTypesTable extends Migration
             $table->string('title_hindi')->nullable();
             $table->string('tag')->nullable();
             
+            $table->auditable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

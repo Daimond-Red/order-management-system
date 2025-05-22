@@ -19,7 +19,9 @@ class CreateVehiclePermitTable extends Migration
             $table->unsignedInteger('vehicle_id')->nullable();
             $table->foreign('vehicle_id')->references('id')->on('vehicles')->onDelete('cascade');
             $table->foreign('permit_id')->references('id')->on('permits')->onDelete('cascade');
+            $table->auditable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

@@ -19,7 +19,9 @@ class CreateAppTranslationsTable extends Migration
             $table->string('tag')->nullable();
             $table->string('value')->nullable();
             $table->string('comment')->nullable();
+            $table->auditable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

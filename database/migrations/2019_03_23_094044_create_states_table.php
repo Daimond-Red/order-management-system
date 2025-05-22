@@ -18,7 +18,9 @@ class CreateStatesTable extends Migration
             $table->string('title')->nullable();
             $table->string('tag')->nullable();
             $table->integer('country_id')->nullable();
-            // $table->timestamps();
+            $table->auditable();
+            $table->timestamps();
+            $table->softDeletes();
         });
     }
 

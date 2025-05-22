@@ -17,7 +17,9 @@ class CreatePermitsTable extends Migration
             $table->increments('id');
             $table->string('title')->nullable();
             $table->string('tag')->nullable();
+            $table->auditable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

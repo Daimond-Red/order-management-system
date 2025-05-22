@@ -21,7 +21,9 @@ class CreateChatLogsTable extends Migration
             $table->unsignedInteger('receiver_id_2')->nullable();
             $table->text('message')->nullable();
             $table->foreign('chat_id')->references('id')->on('chats')->onDelete('cascade');
+            $table->auditable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

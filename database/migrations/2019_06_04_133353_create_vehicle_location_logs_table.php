@@ -23,7 +23,9 @@ class CreateVehicleLocationLogsTable extends Migration
             $table->dateTime('end_date')->nullable();
             $table->foreign('vehicle_id')->references('id')->on('vehicles')->onDelete('cascade');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->auditable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

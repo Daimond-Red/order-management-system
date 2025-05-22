@@ -24,7 +24,7 @@
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content" >
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Add New</h5>
+                <h5 class="modal-title" id="dataModelTitle">Add New</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 </button>
             </div>
@@ -379,7 +379,7 @@
         
         $('body').on('click', '.dataModel', function () {
             var url = $(this).data('href');
-            var title = $(this).data('title');
+            var title = $(this).attr('data-title');
 
             KTApp.blockPage({
                 overlayColor: '#000000',

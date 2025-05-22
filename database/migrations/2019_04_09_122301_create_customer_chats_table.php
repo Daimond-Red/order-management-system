@@ -23,7 +23,9 @@ class CreateCustomerChatsTable extends Migration
             $table->foreign('contact_us_id')->references('id')->on('contact_uses')->onDelete('cascade');
             $table->foreign('sender_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('receiver_id')->references('id')->on('users')->onDelete('cascade');
+            $table->auditable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

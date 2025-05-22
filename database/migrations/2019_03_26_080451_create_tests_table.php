@@ -22,7 +22,9 @@ class CreateTestsTable extends Migration
             $table->date('date')->nullable();
             $table->dateTime('start_date_time')->nullable();
             $table->boolean('status')->default(0);
+            $table->auditable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

@@ -22,7 +22,9 @@ class CreateDeviceTokensTable extends Migration
             $table->string('device_token')->nullable();
             $table->string('lat')->nullable();
             $table->string('lng')->nullable();
+            $table->auditable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

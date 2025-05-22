@@ -179,6 +179,24 @@ Route::group([ 'prefix' => config('app.admin_prefix', 'admin'), 'middleware' => 
     // Route::get('chats/{id}/destroy', [ 'as' => 'admin.chats.delete', 'uses' => 'ChatController@destroy' ]);
     Route::post('chats/logs/store', ['as' => 'admin.chats.logStore', 'uses' => 'ChatController@logStore']);
 
+
+    Route::get('brands', [ 'as' => 'admin.brands.index', 'uses' => 'BrandController@index' ]);
+    Route::get('brands/create', [ 'as' => 'admin.brands.create', 'uses' => 'BrandController@create' ]);
+    Route::post('brands', [ 'as' => 'admin.brands.store', 'uses' => 'BrandController@store' ]);
+    Route::get('brands/{id}', [ 'as' => 'admin.brands.show', 'uses' => 'BrandController@show' ]);
+    Route::get('brands/{id}/edit', [ 'as' => 'admin.brands.edit', 'uses' => 'BrandController@edit' ]);
+    Route::put('brands/{id}', [ 'as' => 'admin.brands.update', 'uses' => 'BrandController@update' ]);
+    Route::get('brands/{id}/destroy', [ 'as' => 'admin.brands.delete', 'uses' => 'BrandController@destroy' ]);
+
+    Route::get('segments', [ 'as' => 'admin.segments.index', 'uses' => 'SegmentController@index' ]);
+    Route::get('segments/create', [ 'as' => 'admin.segments.create', 'uses' => 'SegmentController@create' ]);
+    Route::post('segments', [ 'as' => 'admin.segments.store', 'uses' => 'SegmentController@store' ]);
+    Route::get('segments/{id}', [ 'as' => 'admin.segments.show', 'uses' => 'SegmentController@show' ]);
+    Route::get('segments/{id}/edit', [ 'as' => 'admin.segments.edit', 'uses' => 'SegmentController@edit' ]);
+    Route::put('segments/{id}', [ 'as' => 'admin.segments.update', 'uses' => 'SegmentController@update' ]);
+    Route::get('segments/{id}/destroy', [ 'as' => 'admin.segments.delete', 'uses' => 'SegmentController@destroy' ]);
+
+    Route::get('requisitions/create', ['as' => 'admin.requisitions.create', 'uses' => 'RequisitionController@create']);
 });
 
 Route::get('logs', function(){

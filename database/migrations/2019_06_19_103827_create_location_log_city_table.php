@@ -19,7 +19,9 @@ class CreateLocationLogCityTable extends Migration
             $table->unsignedInteger('location_log_id')->nullable();
             $table->foreign('city_id')->references('id')->on('cities')->onDelete('cascade');
             $table->foreign('location_log_id')->references('id')->on('vehicle_location_logs')->onDelete('cascade');
+            $table->auditable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

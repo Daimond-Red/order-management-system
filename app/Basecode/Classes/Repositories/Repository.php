@@ -76,7 +76,7 @@ class Repository {
     public function getAttrs() {
         $attrs = request()->all();
 
-        $uploads = ['image'];
+        $uploads = ['image', 'cover'];
 
         if (filter_var(request('image'), FILTER_VALIDATE_URL)) {
             $attrs['image'] = $this->download_image(request('image'));
